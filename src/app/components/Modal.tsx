@@ -14,7 +14,7 @@ const Modal = ({
 }: {
   open: boolean;
   setOpen: (value : boolean)=> void;
-  sendData: { lat: string; log: string };
+  sendData: { lat: string; log: string ; name: string};
 }) => {
 
 
