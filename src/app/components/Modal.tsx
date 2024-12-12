@@ -12,9 +12,9 @@ const Modal = ({
   setOpen,
   sendData,
 }: {
-  open: any;
-  setOpen: any;
-  sendData: any;
+  open: boolean;
+  setOpen: (value : boolean)=> void;
+  sendData: { lat: string; log: string };
 }) => {
 
 

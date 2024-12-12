@@ -54,7 +54,7 @@ const HomePage = () => {
     <div>
       <Modal open={open} setOpen={setOpen} sendData={sendData} />
       <div className="flex flex-wrap   ">
-        {data.map((item, index) => (
+        {data.map((item) => (
           <div key={item.id} className="  w-full lg:w-1/4 p-2 ">
             <div className="bg-white shadow-lg rounded-md px-4 py-2 flex justify-between ">
               <p>{item.name}</p>

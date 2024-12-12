@@ -14,8 +14,9 @@ export async function GET() {
     await connection.end();
 
     return NextResponse.json(rows);
-  } catch (error: any) {
+  } catch (error: unknown) {
     await connection.end();
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
