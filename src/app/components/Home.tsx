@@ -71,7 +71,8 @@ const HomePage = () => {
                   style={{ border: 0 }}
                   src={`https://www.google.com/maps?q=${item.log},${item.lat}&z=15&output=embed`}
                   allowFullScreen
-                ></iframe>
+                ></iframe> 
+                
               </div>
             </div>
           </div>
