@@ -13,7 +13,7 @@ type data = {
 const HomePage = () => {
   const [data, setData] = useState<data[]>([]);
   const [sendData, setSendData] = useState({
-    name :"",
+    name: "",
     log: "",
     lat: "",
   });
@@ -24,13 +24,13 @@ const HomePage = () => {
     setOpen(!open);
   };
 
-  const sendDataToMadal = (log: string, lat: string, name : string) => {
+  const sendDataToMadal = (log: string, lat: string, name: string) => {
     setSendData({
-        name,
+      name,
       log,
-      lat
+      lat,
     });
-    handleModal()
+    handleModal();
   };
 
   const fetchData = async () => {
@@ -52,18 +52,27 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      <Modal open={open} setOpen={setOpen} sendData={sendData} />
-      <div className="flex flex-wrap   ">
+      {/* <Modal open={open} setOpen={setOpen} sendData={sendData} /> */}
+
+      <div className="bg-white px-4 py-4 rounded-md shadow-lg">
+        <h2 className="text-xl font-semibold">เครื่องมือติดตาม หมายเลข 01</h2>
+
         {data.map((item) => (
-          <div key={item.id} className="  w-full lg:w-1/4 p-2 ">
-            <div className="bg-white shadow-lg rounded-md px-4 py-2 flex justify-between ">
-              <p>{item.name}</p>
-              <button
-                onClick={() => sendDataToMadal(item.log, item.lat, item.name)}
-                className="bg-red-700 px-3 py-1 text-white rounded-md"
-              >
-                เลือก
-              </button>
+          <div key={item.id} className="  w-full ">
+            <div className="mt-2 ">
+              ลองติจูด : {item.log} <br />
+              ละติจูด : {item.lat}
+              {/* ต้องการโชว์ Google map ตรงนี้ */}
+              <div className="map-container " style={{ marginTop: "10px" }}>
+                <iframe
+                  width="100%"
+                  height="500"
+                  frameBorder="0"
+                  style={{ border: 0 }}
+                  src={`https://www.google.com/maps?q=${item.log},${item.lat}&z=15&output=embed`}
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         ))}
