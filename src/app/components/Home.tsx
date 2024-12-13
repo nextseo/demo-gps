@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 
 type data = {
   id: number;
@@ -12,11 +12,11 @@ type data = {
 
 const HomePage = () => {
   const [data, setData] = useState<data[]>([]);
-  const [sendData, setSendData] = useState({
-    name: "",
-    log: "",
-    lat: "",
-  });
+  // const [sendData, setSendData] = useState({
+  //   name: "",
+  //   log: "",
+  //   lat: "",
+  // });
 
   const [open, setOpen] = useState(false);
 
@@ -24,14 +24,14 @@ const HomePage = () => {
     setOpen(!open);
   };
 
-  const sendDataToMadal = (log: string, lat: string, name: string) => {
-    setSendData({
-      name,
-      log,
-      lat,
-    });
-    handleModal();
-  };
+  // const sendDataToMadal = (log: string, lat: string, name: string) => {
+  //   setSendData({
+  //     name,
+  //     log,
+  //     lat,
+  //   });
+  //   handleModal();
+  // };
 
   const fetchData = async () => {
     try {
