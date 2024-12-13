@@ -18,11 +18,11 @@ const HomePage = () => {
   //   lat: "",
   // });
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const handleModal = () => {
-    setOpen(!open);
-  };
+  // const handleModal = () => {
+  //   setOpen(!open);
+  // };
 
   // const sendDataToMadal = (log: string, lat: string, name: string) => {
   //   setSendData({
